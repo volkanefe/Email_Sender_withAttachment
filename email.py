@@ -40,6 +40,7 @@ def send_email_with_attachment(sender_email, sender_password, subject, body, att
         msg.attach(part)
 
         server = smtplib.SMTP('smtp.gmail.com', 587)
+        # server = smtplib.SMTP('smtp-mail.outlook.com', 587) For Hotmail/Outlook
         server.starttls()
         server.login(sender_email, sender_password)
         server.sendmail(sender_email, recipient_email, msg.as_string())
